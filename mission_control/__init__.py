@@ -1,5 +1,5 @@
 # ═══════════════════════════════════════════════════════════════════
-# MISSION CONTROL - OpenClaw Trading Corp  
+# MISSION CONTROL - Bittrading Trading Corp  
 # ═══════════════════════════════════════════════════════════════════
 
 from .message_bus import MessageBus

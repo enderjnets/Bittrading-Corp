@@ -11,7 +11,7 @@ Responsabilidades:
 - Identificación de tendencias macro
 - Ranking de oportunidades por potencial
 
-Author: OpenClaw Trading Corp
+Author: Bittrading Trading Corp
 Version: 1.0.0
 """
 

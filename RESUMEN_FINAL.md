@@ -21,8 +21,8 @@
    ✅ Sistema de Workers distribuidos
    ✅ Interfaz Streamlit
 
-📁 NUEVO PROYECTO (OpenClaw Trading Corp)
-   └─ "/Users/enderj/OpenClaw_Trading_Corp"
+📁 NUEVO PROYECTO (Bittrading Trading Corp)
+   └─ "/Users/enderj/Bittrading_Trading_Corp"
    
    ✅ 10 Agentes Especializados
    ✅ Sistema de Mensajería (Message Bus)
@@ -185,7 +185,7 @@
 
 Estructura:
 ```
-OpenClaw_Trading_Corp/
+Bittrading_Trading_Corp/
 ├── agents/                          # 🤖 Agentes Especializados
 │   ├── base_agent.py                # Framework base
 │   ├── ceo.py                       # Chief Executive Orchestrator
@@ -240,7 +240,7 @@ python coordinator.py
 
 Opción 2: Iniciar Sistema de Agentes (Requiere Coordinator)
 ─────────────────────────────────────────────────────────────
-cd /Users/enderj/OpenClaw_Trading_Corp
+cd /Users/enderj/Bittrading_Trading_Corp
 python main.py
 
 # Ver logs: tail -f logs/system_*.log
@@ -248,7 +248,7 @@ python main.py
 
 Opción 3: Iniciar TODO (Recomendado)
 ────────────────────────────────────
-cd /Users/enderj/OpenClaw_Trading_Corp
+cd /Users/enderj/Bittrading_Trading_Corp
 python run_unified.py --all
 
 # Esto inicia:
@@ -259,14 +259,14 @@ python run_unified.py --all
 
 Verificar Estado:
 ────────────────
-cd /Users/enderj/OpenClaw_Trading_Corp
+cd /Users/enderj/Bittrading_Trading_Corp
 python run_unified.py --status
 
 ══════════════════════════════════════════════════════════════════════════════════════
 
 ⚙️ CONFIGURACIÓN REQUERIDA
 
-Antes de ejecutar, crear archivo .env en /Users/enderj/OpenClaw_Trading_Corp:
+Antes de ejecutar, crear archivo .env en /Users/enderj/Bittrading_Trading_Corp:
 
 COINBASE_API_KEY=tu_api_key
 COINBASE_API_SECRET=tu_api_secret
@@ -318,7 +318,7 @@ MAX_TOTAL_EXPOSURE=25
 
 ✨ RESUMEN FINAL
 
-✅ OpenClaw Trading Corp está COMPLETAMENTE IMPLEMENTADO
+✅ Bittrading Trading Corp está COMPLETAMENTE IMPLEMENTADO
 
 ✅ Sistema de 10 agentes especializados funcionando
 ✅ Integración completa con proyecto legacy

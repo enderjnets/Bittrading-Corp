@@ -13,7 +13,7 @@ Mejoras integradas:
 - Genetic miner con Numba JIT (4000x speedup!)
 - Elitism y tournament selection
 
-Author: OpenClaw Trading Corp + Solana Trader Knowledge
+Author: Bittrading Trading Corp + Solana Trader Knowledge
 Version: 3.0.0
 """
 
@@ -31,8 +31,8 @@ from uuid import uuid4
 # ═══════════════════════════════════════════════════════════════════
 
 @dataclass
-class OpenClawConfig:
-    """Configuración avanzada de OpenClaw"""
+class BittradingConfig:
+    """Configuración avanzada de Bittrading"""
     
     # MiniMax 2.1 (Thinking Mode)
     thinking_enabled: bool = True
@@ -93,8 +93,8 @@ class AgentRegistry:
     Usado por el coordinator para seleccionar el agente correcto.
     """
     
-    def __init__(self, config: OpenClawConfig = None):
-        self.config = config or OpenClawConfig()
+    def __init__(self, config: BittradingConfig = None):
+        self.config = config or BittradingConfig()
         self.agents: Dict[str, AgentProfile] = {}
         self.message_queue: Dict[str, List[Dict]] = {}
         self._init_agents()
@@ -105,28 +105,28 @@ class AgentRegistry:
             # Trading Team
             AgentProfile(
                 agent_id="ceo",
-                name="OpenClaw CEO",
+                name="Bittrading CEO",
                 role="Chief Executive",
                 specialty="Strategic decision making",
                 capabilities=["planning", "delegation", "monitoring", "reporting"]
             ),
             AgentProfile(
                 agent_id="trader",
-                name="OpenClaw Trader",
+                name="Bittrading Trader",
                 role="Trading Specialist",
                 specialty="Execution on Coinbase",
                 capabilities=["swap", "balance", "orders", "positions"]
             ),
             AgentProfile(
                 agent_id="market_scanner",
-                name="OpenClaw Scanner",
+                name="Bittrading Scanner",
                 role="Market Intelligence",
                 specialty="Opportunity detection",
                 capabilities=["scan", "analyze", "rank"]
             ),
             AgentProfile(
                 agent_id="strategy_generator",
-                name="OpenClaw Generator",
+                name="Bittrading Generator",
                 role="Strategy Officer",
                 specialty="Strategy creation",
                 capabilities=["generate", "evolve", "optimize"]
@@ -134,7 +134,7 @@ class AgentRegistry:
             # Risk Team
             AgentProfile(
                 agent_id="risk_manager",
-                name="OpenClaw Risk Manager",
+                name="Bittrading Risk Manager",
                 role="Risk Specialist",
                 specialty="Risk assessment",
                 capabilities=["assess_risk", "check_limits", "validate", "veto"]
@@ -142,7 +142,7 @@ class AgentRegistry:
             # Infrastructure
             AgentProfile(
                 agent_id="worker_manager",
-                name="OpenClaw Infrastructure",
+                name="Bittrading Infrastructure",
                 role="Infrastructure Manager",
                 specialty="Worker coordination",
                 capabilities=["monitor", "distribute", "scale"]
@@ -150,14 +150,14 @@ class AgentRegistry:
             # Analysis
             AgentProfile(
                 agent_id="analyst",
-                name="OpenClaw Analyst",
+                name="Bittrading Analyst",
                 role="Market Analyst",
                 specialty="Technical analysis",
                 capabilities=["technical", "fundamental", "sentiment"]
             ),
             AgentProfile(
                 agent_id="strategy_selector",
-                name="OpenClaw Selector",
+                name="Bittrading Selector",
                 role="Investment Officer",
                 specialty="Portfolio selection",
                 capabilities=["select", "rank", "allocate"]
@@ -165,7 +165,7 @@ class AgentRegistry:
             # Execution
             AgentProfile(
                 agent_id="backtest_orchestrator",
-                name="OpenClaw Backtester",
+                name="Bittrading Backtester",
                 role="Backtesting Lead",
                 specialty="Distributed testing",
                 capabilities=["backtest", "optimize", "validate"]
@@ -173,7 +173,7 @@ class AgentRegistry:
             # Utility
             AgentProfile(
                 agent_id="task_manager",
-                name="OpenClaw Project Manager",
+                name="Bittrading Project Manager",
                 role="Task Manager",
                 specialty="Workflow management",
                 capabilities=["plan", "schedule", "track"]
@@ -234,8 +234,8 @@ class ThinkingEngine:
     CRUCIAL: Sin thinking mode, el modelo pierde su chain of reasoning.
     """
     
-    def __init__(self, config: OpenClawConfig = None):
-        self.config = config or OpenClawConfig()
+    def __init__(self, config: BittradingConfig = None):
+        self.config = config or BittradingConfig()
         self.thinking_enabled = config.thinking_enabled if config else True
     
     async def think(
@@ -380,9 +380,9 @@ class SubAgentSpawner:
     Implementa sessions_spawn pattern.
     """
     
-    def __init__(self, registry: AgentRegistry, config: OpenClawConfig = None):
+    def __init__(self, registry: AgentRegistry, config: BittradingConfig = None):
         self.registry = registry
-        self.config = config or OpenClawConfig()
+        self.config = config or BittradingConfig()
         self.active_subagents: Dict[str, Dict] = {}
     
     async def spawn(
@@ -535,9 +535,9 @@ class MemoryManager:
     Critical para memory compaction.
     """
     
-    def __init__(self, registry: AgentRegistry, config: OpenClawConfig = None):
+    def __init__(self, registry: AgentRegistry, config: BittradingConfig = None):
         self.registry = registry
-        self.config = config or OpenClawConfig()
+        self.config = config or BittradingConfig()
         self.memory_path = "data/openclaw_memory.json"
     
     async def flush(self) -> Dict:
@@ -604,7 +604,7 @@ class ActivityFeed:
 # ════════════════════════════════════════════════════════════════════════
 
 # Configuración
-config = OpenClawConfig()
+config = BittradingConfig()
 
 # Registry
 registry = AgentRegistry(config)
@@ -665,7 +665,7 @@ async def ejemplo_completo():
     thinking = await thinking_engine.think(
         task="Analyze SOL price action and generate trading strategy",
         context={"market": "SOL", "timeframe": "1h"},
-        agent_name="OpenClaw Analyst"
+        agent_name="Bittrading Analyst"
     )
     
     print(f"   Reasoning steps:")
@@ -701,7 +701,7 @@ async def ejemplo_completo():
     print(f"   Saved to: {memory_manager.memory_path}")
     
     print("\n" + "="*80)
-    print("✅ OpenClaw Trading Corp - Evolved Version Demo Complete")
+    print("✅ Bittrading Trading Corp - Evolved Version Demo Complete")
     print("="*80)
 
 

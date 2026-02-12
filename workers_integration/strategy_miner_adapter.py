@@ -10,7 +10,7 @@ dentro del nuevo sistema de agentes.
 - Evaluación de poblaciones
 - Evolución de genomas
 
-Author: OpenClaw Trading Corp
+Author: Bittrading Trading Corp
 Version: 1.0.0
 """
 

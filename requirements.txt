@@ -1,5 +1,5 @@
 """
-📦 OpenClaw Trading Corp - Dependencies
+📦 Bittrading Trading Corp - Dependencies
 =========================================
 Sistema de trading autónomo multi-agente
 

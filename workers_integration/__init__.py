@@ -1,5 +1,5 @@
 # ═══════════════════════════════════════════════════════════════════
-# WORKERS INTEGRATION - OpenClaw Trading Corp
+# WORKERS INTEGRATION - Bittrading Trading Corp
 # ═══════════════════════════════════════════════════════════════════
 
 """

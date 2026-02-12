@@ -9,7 +9,7 @@ Funcionalidades:
 - Conecta Workers al nuevo sistema de agentes
 - Reutiliza toda la lógica de distribución de WUs
 
-Author: OpenClaw Trading Corp
+Author: Bittrading Trading Corp
 Version: 1.0.0
 """
 

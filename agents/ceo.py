@@ -1,7 +1,7 @@
 """
 🧠 CEO AGENT - Chief Executive Orchestrator
 ==============================================
-El cerebro supremo de OpenClaw Trading Corp.
+El cerebro supremo de Bittrading Trading Corp.
 
 Responsabilidades:
 - Coordinar todos los agentes subordinados
@@ -10,7 +10,7 @@ Responsabilidades:
 - Gestionar emergencias y decisiones críticas
 - Reportar estado general
 
-Author: OpenClaw Trading Corp
+Author: Bittrading Trading Corp
 Version: 1.0.0
 """
 
@@ -56,7 +56,7 @@ class CEOConfig:
 
 class CEOAgent(BaseAgent):
     """
-    Chief Executive Orchestrator - El cerebro de OpenClaw Trading Corp.
+    Chief Executive Orchestrator - El cerebro de Bittrading Trading Corp.
     
     Supervisiona todos los agentes, toma decisiones estratégicas y mantiene
     el sistema funcionando como una empresa de trading coordinada.
@@ -405,7 +405,7 @@ class CEOAgent(BaseAgent):
         """Enviar reporte diario"""
         # Por ahora, solo loggear
         self.logger.info(f"\n{'='*60}")
-        self.logger.info("📊 REPORTE DIARIO - OpenClaw Trading Corp")
+        self.logger.info("📊 REPORTE DIARIO - Bittrading Trading Corp")
         self.logger.info(f"{'='*60}")
         self.logger.info(f"Salud del sistema: {report['system_health']}")
         self.logger.info(f"Trading activo: {report['trading_active']}")

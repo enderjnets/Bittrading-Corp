@@ -14,7 +14,7 @@ Responsabilidades:
 
 ⚠️ TIENE PODER DE VETO ABSOLUTO - puede detener cualquier operación
 
-Author: OpenClaw Trading Corp
+Author: Bittrading Trading Corp
 Version: 1.0.0
 """
 

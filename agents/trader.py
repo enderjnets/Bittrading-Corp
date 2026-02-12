@@ -11,7 +11,7 @@ Responsabilidades:
 - Order types especializados
 - Multi-exchange coordination
 
-Author: OpenClaw Trading Corp
+Author: Bittrading Trading Corp
 Version: 1.0.0
 """
 

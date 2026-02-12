@@ -11,7 +11,7 @@ Dashboards disponibles:
 - Gráficos en tiempo real
 - Métricas de performance
 
-Author: OpenClaw Trading Corp
+Author: Bittrading Trading Corp
 Version: 2.0.0
 """
 
@@ -298,7 +298,7 @@ class DashboardService:
 <!DOCTYPE html>
 <html>
 <head>
-    <title>OpenClaw Trading Corp - Dashboard</title>
+    <title>Bittrading Trading Corp - Dashboard</title>
     <meta charset="UTF-8">
     <meta http-equiv="refresh" content="10">
     <style>
@@ -546,7 +546,7 @@ class DashboardService:
             "performance": m.performance,
             "system": m.system,
             "api_version": "2.0.0",
-            "source": "OpenClaw Trading Corp"
+            "source": "Bittrading Trading Corp"
         }
     
     def get_json_export(self) -> str:

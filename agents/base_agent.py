@@ -1,9 +1,9 @@
 """
-🤖 BASE AGENT - Clase Base para Todos los Agentes de OpenClaw Trading Corp
+🤖 BASE AGENT - Clase Base para Todos los Agentes de Bittrading Trading Corp
 ===========================================================================
 Framework base que heredarán todos los agentes especializados.
 
-Author: OpenClaw Trading Corp
+Author: Bittrading Trading Corp
 Version: 1.0.0
 """
 
@@ -118,7 +118,7 @@ class AgentConfig:
 
 class BaseAgent(ABC):
     """
-    Clase base abstracta para todos los agentes de OpenClaw Trading Corp.
+    Clase base abstracta para todos los agentes de Bittrading Trading Corp.
     
     Proporciona:
     - Ciclo de vida del agente
@@ -158,7 +158,7 @@ class BaseAgent(ABC):
     
     def _setup_logging(self):
         """Configurar logging específico del agente"""
-        log_path = Path("/Users/enderj/OpenClaw_Trading_Corp/logs/agents")
+        log_path = Path("/Users/enderj/Bittrading_Trading_Corp/logs/agents")
         log_path.mkdir(parents=True, exist_ok=True)
         
         log_file = log_path / f"{self.agent_id}.log"

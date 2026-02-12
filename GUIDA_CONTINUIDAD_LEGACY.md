@@ -253,7 +253,7 @@ python coordinator.py
 ### Escenario 2: Solo Nuevos Agentes
 
 ```bash
-cd /Users/enderj/OpenClaw_Trading_Corp
+cd /Users/enderj/Bittrading_Trading_Corp
 python main.py
 # No necesita Coordinator corriendo
 # Genera estrategias, coordinada internamente
@@ -267,7 +267,7 @@ cd "/.../Coinbase Cripto Trader Claude"
 python coordinator.py
 
 # Terminal 2: Nuevos agentes
-cd /Users/enderj/OpenClaw_Trading_Corp
+cd /Users/enderj/Bittrading_Trading_Corp
 python main.py
 # Los agentes usan el Coordinator automáticamente
 ```
@@ -287,7 +287,7 @@ streamlit run interface.py &
 python worker_daemon.sh &
 
 # 4. Iniciar nuevos agentes
-cd /Users/enderj/OpenClaw_Trading_Corp
+cd /Users/enderj/Bittrading_Trading_Corp
 python main.py
 ```
 
@@ -305,7 +305,7 @@ RAY_ADDRESS=auto
 ### Variables de Entorno (Nuevo)
 
 ```env
-# En /Users/enderj/OpenClaw_Trading_Corp/.env
+# En /Users/enderj/Bittrading_Trading_Corp/.env
 COINBASE_API_KEY=...
 COINBASE_API_SECRET=...
 COORDINATOR_URL=http://localhost:5000  # Point al coordinator legacy
@@ -393,5 +393,5 @@ Si algo no funciona como antes:
 
 ---
 
-*OpenClaw Trading Corp - Continuidad Garantizada*
+*Bittrading Trading Corp - Continuidad Garantizada*
 *El pasado se mantiene, el futuro se construye*

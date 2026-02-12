@@ -11,7 +11,7 @@ Características:
 - Timeouts y retries
 - Dead letter queue
 
-Author: OpenClaw Trading Corp
+Author: Bittrading Trading Corp
 Version: 1.0.0
 """
 
@@ -79,7 +79,7 @@ class MessageStats:
 
 class MessageBus:
     """
-    Sistema central de mensajería para OpenClaw Trading Corp.
+    Sistema central de mensajería para Bittrading Trading Corp.
     
     Maneja la comunicación entre todos los agentes del sistema.
     """
@@ -129,7 +129,7 @@ class MessageBus:
     
     def _setup_logging(self):
         """Configurar logging"""
-        log_path = Path("/Users/enderj/OpenClaw_Trading_Corp/logs/mission_control")
+        log_path = Path("/Users/enderj/Bittrading_Trading_Corp/logs/mission_control")
         log_path.mkdir(parents=True, exist_ok=True)
         
         log_file = log_path / "message_bus.log"

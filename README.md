@@ -1,14 +1,14 @@
-# 🏢 OpenClaw Trading Corp
+# 🏢 Bittrading Corp
 
 ## Sistema de Trading Autónoma Multi-Agente
 
-¡Bienvenido a **OpenClaw Trading Corp** - una empresa de trading totalmente autónoma manejada por agentes de IA!
+¡Bienvenido a **Bittrading Corp** - una empresa de trading totalmente autónoma manejada por agentes de IA!
 
 ---
 
 ## 🎯 Descripción
 
-OpenClaw Trading Corp es un sistema de trading avanzado donde cada fase del proceso es manejada por un agente IA especializado, trabajando colaborativamente bajo coordinación central.
+Bittrading Corp es un sistema de trading avanzado donde cada fase del proceso es manejada por un agente IA especializado, trabajando colaborativamente bajo coordinación central.
 
 ### Estructura de Agentes
 
@@ -43,7 +43,7 @@ pip --version
 
 ```bash
 # Clonar o navegar al directorio
-cd /Users/enderj/OpenClaw_Trading_Corp
+cd /Users/enderj/Bittrading_Corp
 
 # Crear entorno virtual
 python -m venv venv
@@ -79,7 +79,7 @@ python main.py --log-level DEBUG --config config.yaml
 ## 📁 Estructura del Proyecto
 
 ```
-OpenClaw_Trading_Corp/
+Bittrading_Corp/
 ├── agents/                          # Agentes especializados
 │   ├── base_agent.py                # Clase base para todos los agentes
 │   ├── ceo.py                       # Chief Executive Orchestrator
@@ -101,6 +101,10 @@ OpenClaw_Trading_Corp/
 │   └── models.py                   # Modelos de datos
 │
 ├── workers_integration/             # Integración con workers
+│   ├── complete_coordinator_bridge.py  # Bridge completo con Coordinator
+│   ├── coordinator_adapter.py      # Adapter del Coordinator
+│   ├── dashboard_integration.py    # Integración dashboards
+│   └── strategy_miner_adapter.py   # Adapter del Miner
 │
 ├── strategies/                      # Biblioteca de estrategias
 │
@@ -117,6 +121,7 @@ OpenClaw_Trading_Corp/
 │   └── risk.yaml                   # Configuración de riesgo
 │
 ├── main.py                          # Punto de entrada
+├── run_unified.py                   # Script unificado
 ├── requirements.txt                 # Dependencias
 └── README.md                        # Este archivo
 ```
@@ -169,7 +174,7 @@ El **Risk Manager** tiene los siguientes límites por defecto:
 
 ```
 ┌──────────────────────────────────────────────────────────────────┐
-│                    OPENCLAW TRADING CORP                          │
+│                    BITTRADING CORP                                │
 └──────────────────────────────────────────────────────────────────┘
 
    ┌─────────────────┐
@@ -223,7 +228,7 @@ import asyncio
 async def main():
     message_bus = MessageBus()
     await message_bus.start_delivery_workers(3)
-    
+
     ceo = CEOAgent(message_bus)
     await ceo.start()
 
@@ -332,10 +337,9 @@ Este proyecto está bajo la Licencia MIT.
 
 ## 🤝 Contacto
 
-- **Email**: trading@openclaw.ai
-- **GitHub**: https://github.com/openclaw/trading-corp
+- **GitHub**: https://github.com/enderjnets/Bittrading-Corp
 
 ---
 
-*Built with ❤️ by OpenClaw Trading Corp*
+*Built with ❤️ by Bittrading Corp*
 *Trading Automatizado de Próxima Generación*

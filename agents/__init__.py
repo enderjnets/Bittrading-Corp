@@ -1,5 +1,5 @@
 # ═══════════════════════════════════════════════════════════════════
-# AGENTS - OpenClaw Trading Corp
+# AGENTS - Bittrading Trading Corp
 # ═══════════════════════════════════════════════════════════════════
 
 from .base_agent import BaseAgent, AgentConfig, AgentMessage, AgentState, MessageType, TaskPriority

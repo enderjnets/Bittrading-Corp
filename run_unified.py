@@ -11,7 +11,7 @@ Usage:
     python run_unified.py --workers       # Solo workers
     python run_unified.py --status        # Ver estado
 
-Author: OpenClaw Trading Corp
+Author: Bittrading Trading Corp
 Version: 1.0.0
 """
 
@@ -30,7 +30,7 @@ import requests
 # ═══════════════════════════════════════════════════════════════════
 
 COORDINATOR_PATH = "/Users/enderj/Library/CloudStorage/GoogleDrive-enderjnets@gmail.com/My Drive/Bittrader/Bittrader EA/Dev Folder/Coinbase Cripto Trader Claude"
-AGENTS_PATH = "/Users/enderj/OpenClaw_Trading_Corp"
+AGENTS_PATH = "/Users/enderj/Bittrading_Trading_Corp"
 COORDINATOR_URL = "http://localhost:5000"
 
 # ═══════════════════════════════════════════════════════════════════

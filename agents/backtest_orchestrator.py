@@ -11,7 +11,7 @@ Responsabilidades:
 - Detección de anomalías
 - Optimización de uso de recursos
 
-Author: OpenClaw Trading Corp
+Author: Bittrading Trading Corp
 Version: 1.0.0
 """
 

@@ -12,7 +12,7 @@
 📁 ESTRUCTURA DEL PROYECTO
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-OpenClaw_Trading_Corp/
+Bittrading_Trading_Corp/
 ├── agents/                          # 🤖 Agentes Especializados
 │   ├── base_agent.py                # Clase base framework
 │   ├── ceo.py                       # 🧠 Chief Executive Orchestrator
@@ -87,7 +87,7 @@ OpenClaw_Trading_Corp/
 
 Opción 1: Inicio Rápido
 ───────────────────────
-cd /Users/enderj/OpenClaw_Trading_Corp
+cd /Users/enderj/Bittrading_Trading_Corp
 python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
@@ -96,7 +96,7 @@ python main.py
 
 Opción 2: Desarrollo con Debug
 ──────────────────────────────
-cd /Users/enderj/OpenClaw_Trading_Corp
+cd /Users/enderj/Bittrading_Trading_Corp
 source venv/bin/activate
 export LOG_LEVEL=DEBUG
 python main.py
@@ -263,7 +263,7 @@ Librerías utilizadas:
 ✨ RESUMEN EJECUTIVO
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-✅ OpenClaw Trading Corp está COMPLETAMENTE IMPLEMENTADO
+✅ Bittrading Trading Corp está COMPLETAMENTE IMPLEMENTADO
 ✅ 6 agentes principales + framework completo
 ✅ Sistema de mensajería asíncrono
 ✅ Base de datos centralizada

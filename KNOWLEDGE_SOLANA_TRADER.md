@@ -4,7 +4,7 @@
 # Fecha: Febrero 2026
 
 Este documento contiene todo el conocimiento valioso extraído del proyecto
-Solana Cripto Trader para integrar en OpenClaw Trading Corp.
+Solana Cripto Trader para integrar en Bittrading Trading Corp.
 
 ---
 
@@ -500,7 +500,7 @@ COORDINATOR_URL="http://localhost:5001" python3 crypto_worker.py
 ## 🔄 INTEGRACIÓN CON OPENCLAW
 
 El proyecto Solana Cripto Trader tiene avanzadas implementaciones que
-debemos integrar en OpenClaw Trading Corp:
+debemos integrar en Bittrading Trading Corp:
 
 ### Prioridad Alta
 - [ ] Implementar MiniMax 2.1 thinking mode

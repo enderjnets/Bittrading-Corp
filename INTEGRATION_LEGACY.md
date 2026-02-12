@@ -9,7 +9,7 @@ Este documento explica cómo integrar el código existente del proyecto:
 
 Con el nuevo sistema de agentes en:
 ```
-"/Users/enderj/OpenClaw_Trading_Corp"
+"/Users/enderj/Bittrading_Trading_Corp"
 ```
 
 ---
@@ -94,7 +94,7 @@ python coordinator.py
 ### Opción 2: Ejecutar Nuevo Sistema de Agentes
 
 ```bash
-cd /Users/enderj/OpenClaw_Trading_Corp
+cd /Users/enderj/Bittrading_Trading_Corp
 
 # Iniciar sistema de agentes
 python main.py
@@ -110,7 +110,7 @@ cd "/Users/enderj/Library/CloudStorage/GoogleDrive-enderjnets@gmail.com/My Drive
 python coordinator.py
 
 # Terminal 2: Nuevo sistema de agentes
-cd /Users/enderj/OpenClaw_Trading_Corp
+cd /Users/enderj/Bittrading_Trading_Corp
 python main.py
 ```
 
@@ -313,4 +313,4 @@ Si hay problemas con la integración:
 
 ---
 
-*OpenClaw Trading Corp - Integración Legacy con Nuevos Agentes*
+*Bittrading Trading Corp - Integración Legacy con Nuevos Agentes*

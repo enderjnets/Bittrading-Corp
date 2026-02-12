@@ -1,4 +1,4 @@
-# 📋 OpenClaw Trading Corp - Plan de Implementación
+# 📋 Bittrading Trading Corp - Plan de Implementación
 
 ## 🎯 OBJETIVO
 Construir un sistema de trading autónomo completo donde cada fase del proceso es manejada por agentes IA especializados.
@@ -8,7 +8,7 @@ Construir un sistema de trading autónomo completo donde cada fase del proceso e
 ## 📁 ESTRUCTURA DEL PROYECTO
 
 ```
-OpenClaw_Trading_Corp/
+Bittrading_Trading_Corp/
 ├── agents/                          # Agentes especializados
 │   ├── __init__.py
 │   ├── base_agent.py                # Clase base para todos los agentes
@@ -81,7 +81,7 @@ OpenClaw_Trading_Corp/
 ### 1.1 Configuración del Proyecto
 ```bash
 # Crear entorno virtual
-cd /Users/enderj/OpenClaw_Trading_Corp
+cd /Users/enderj/Bittrading_Trading_Corp
 python -m venv venv
 source venv/bin/activate
 
@@ -460,4 +460,4 @@ requests>=2.31
 
 ---
 
-*¡Vamos a construir OpenClaw Trading Corp!* 🚀
+*¡Vamos a construir Bittrading Trading Corp!* 🚀

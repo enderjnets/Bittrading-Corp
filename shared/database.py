@@ -1,11 +1,11 @@
 """
 🗄️ SHARED - Base de Datos Centralizada
 ========================================
-Modelos de datos y conexión a base de datos para OpenClaw Trading Corp.
+Modelos de datos y conexión a base de datos para Bittrading Trading Corp.
 
 Usa SQLAlchemy con soporte para SQLite (desarrollo) y PostgreSQL (producción).
 
-Author: OpenClaw Trading Corp
+Author: Bittrading Trading Corp
 Version: 1.0.0
 """
 

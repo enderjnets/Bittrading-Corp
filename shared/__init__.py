@@ -1,5 +1,5 @@
 # ═══════════════════════════════════════════════════════════════════
-# SHARED - OpenClaw Trading Corp
+# SHARED - Bittrading Trading Corp
 # ═══════════════════════════════════════════════════════════════════
 
 from .database import Database, get_database, DatabaseConfig

@@ -1,4 +1,4 @@
-# 🏢 OpenClaw Trading Corp - Arquitectura Multi-Agente
+# 🏢 Bittrading Trading Corp - Arquitectura Multi-Agente
 
 ## 🎯 VISIÓN GENERAL
 
@@ -406,5 +406,5 @@ trading_corp/
 
 ---
 
-*OpenClaw Trading Corp - Trading Automatizado de Próxima Generación*
-*Built with OpenClaw Framework + Mission Control Architecture*
+*Bittrading Trading Corp - Trading Automatizado de Próxima Generación*
+*Built with Bittrading Framework + Mission Control Architecture*

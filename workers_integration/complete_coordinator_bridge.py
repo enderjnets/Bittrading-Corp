@@ -11,7 +11,7 @@ CARACTERÍSTICAS:
 - ✅ Agentes pueden enviar/recibir datos transparente
 - ✅ Bidirectional communication
 
-Author: OpenClaw Trading Corp
+Author: Bittrading Trading Corp
 Version: 2.0.0
 """
 

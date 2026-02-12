@@ -11,7 +11,7 @@ Responsabilidades:
 - Innovación en enfoques de trading
 - Búsqueda de edge en el mercado
 
-Author: OpenClaw Trading Corp
+Author: Bittrading Trading Corp
 Version: 1.0.0
 """
 

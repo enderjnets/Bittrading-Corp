@@ -1,6 +1,6 @@
 """
-🚀 OPENCLAW TRADING CORP - MAIN ENTRY POINT
-============================================
+🚀 BITTRADING CORP - MAIN ENTRY POINT
+=========================================
 Inicializa y coordina todos los agentes del sistema.
 
 Este es el punto de entrada principal que:
@@ -9,7 +9,7 @@ Este es el punto de entrada principal que:
 3. Inicia el ciclo principal de cada agente
 4. Maneja shutdown graceful
 
-Author: OpenClaw Trading Corp
+Author: Bittrading Corp
 Version: 1.0.0
 """
 
@@ -27,7 +27,7 @@ from typing import Dict, Any, List
 
 def setup_logging():
     """Configurar logging del sistema"""
-    log_path = Path("/Users/enderj/OpenClaw_Trading_Corp/logs")
+    log_path = Path("/Users/enderj/Bittrading_Corp/logs")
     log_path.mkdir(parents=True, exist_ok=True)
     
     log_file = log_path / f"system_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
@@ -52,9 +52,9 @@ def setup_logging():
 # CLASE PRINCIPAL DEL SISTEMA
 # ═══════════════════════════════════════════════════════════════════
 
-class OpenClawTradingCorp:
+class BittradingCorp:
     """
-    Sistema principal de OpenClaw Trading Corp.
+    Sistema principal de Bittrading Corp.
     
     Maneja el ciclo de vida completo de todos los agentes.
     """
@@ -62,7 +62,7 @@ class OpenClawTradingCorp:
     def __init__(self):
         self.logger = setup_logging()
         self.logger.info("="*60)
-        self.logger.info("🏢 INICIANDO OPENCLAW TRADING CORP")
+        self.logger.info("🏢 INICIANDO BITTRADING CORP")
         self.logger.info("="*60)
         
         # Componentes principales
@@ -217,9 +217,9 @@ class OpenClawTradingCorp:
         # Mantener el sistema ejecutándose
         try:
             while self.running:
-                await asyncio.sleep(10)
+(10)
                 
-                # Mostrar métricas cada minuto
+                # Mostrar                await asyncio.sleep métricas cada minuto
                 if int(datetime.now().strftime("%S")) < 15:
                     await self._show_metrics()
                     
@@ -239,7 +239,7 @@ class OpenClawTradingCorp:
     async def shutdown(self):
         """Apagado graceful del sistema"""
         self.logger.info("\n" + "="*60)
-        self.logger.info("🛑 CERRANDO OPENCLAW TRADING CORP")
+        self.logger.info("🛑 CERRANDO BITTRADING CORP")
         self.logger.info("="*60)
         
         self.running = False
@@ -385,7 +385,7 @@ class TaskManagerAgent:
 
 async def main():
     """Función principal"""
-    system = OpenClawTradingCorp()
+    system = BittradingCorp()
     
     # Configurar handlers de señales
     loop = asyncio.get_event_loop()
