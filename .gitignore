@@ -1,0 +1,65 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environments
+venv/
+ENV/
+env/
+.venv
+
+# Trading data
+*.csv
+*.db
+*.sqlite3
+!requirements.txt
+
+# API Keys y configuración sensible
+.env
+*.pem
+*.key
+config.local.yaml
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+logs/
+*.log
+!.gitkeep
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Documentos temporales
+*.tmp
+*.bak
+*~
+
+#macOS
+.DS_Store
