@@ -1,6 +1,6 @@
 """
 💰 RISK MANAGER AGENT - Chief Risk Officer
-============================================
+===========================================
 Controla TODO el riesgo del sistema - TIENE PODER DE VETO.
 
 Responsabilidades:
@@ -15,30 +15,31 @@ Responsabilidades:
 ⚠️ TIENE PODER DE VETO ABSOLUTO - puede detener cualquier operación
 
 Author: Bittrading Trading Corp
-Version: 1.0.0
+Version: 1.0.1  # Corregido
 """
 
-import
+import asyncio
+import logging
 import uuid
- asyncio
-import logging, timedelta
-fromfrom datetime import datetime typing import Any, Dict, List, Optional
+from datetime import datetime, timedelta
+from typing import Any, Dict, List, Optional
 from dataclasses import dataclass, field
 from enum import Enum
 
 from agents.base_agent import (
-    Base, AgentMessage,Agent, AgentConfig AgentState, 
+    BaseAgent, AgentMessage, AgentConfig, AgentState, 
     MessageType, TaskPriority
 )
 
-# ═══════════════════════════════════════════════════════════════════
+
+# ═══════════════════════════════════════════════════════════════════════════
 # ENUMS Y ESTRUCTURAS
-# ═══════════════════════════════════════════════════════════════════
+# ═══════════════════════════════════════════════════════════════════════════
 
 class RiskLevel(Enum):
     """Niveles de riesgo"""
     LOW = "LOW"
-    MEDIUM = "MEDIUM"  
+    MEDIUM = "MEDIUM"
     HIGH = "HIGH"
     EXTREME = "EXTREME"
 
@@ -109,9 +110,9 @@ class RiskAssessment:
     reasons: List[str]
     risk_manager_override: bool = False
 
-# ═══════════════════════════════════════════════════════════════════
+# ═══════════════════════════════════════════════════════════════════════════
 # RISK MANAGER AGENT
-# ═══════════════════════════════════════════════════════════════════
+# ═══════════════════════════════════════════════════════════════════════════
 
 class RiskManagerAgent(BaseAgent):
     """
@@ -174,9 +175,9 @@ class RiskManagerAgent(BaseAgent):
         
         self.logger.info("💰 Risk Manager Agent inicializado")
     
-    # ═══════════════════════════════════════════════════════════════
+    # ═══════════════════════════════════════════════════════════════════════
     # CONFIGURACIÓN DE LÍMITES
-    # ═══════════════════════════════════════════════════════════════
+    # ═══════════════════════════════════════════════════════════════════════
     
     def _setup_default_limits(self):
         """Configurar límites de riesgo por defecto"""
@@ -268,9 +269,9 @@ class RiskManagerAgent(BaseAgent):
             )
         ]
     
-    # ═══════════════════════════════════════════════════════════════
+    # ═══════════════════════════════════════════════════════════════════════
     # CICLO DE VIDA
-    # ═══════════════════════════════════════════════════════════════
+    # ═══════════════════════════════════════════════════════════════════════
     
     async def on_start(self):
         """Inicializar Risk Manager"""
@@ -326,9 +327,9 @@ class RiskManagerAgent(BaseAgent):
         if self.current_risk_level == RiskLevel.EXTREME:
             await self._trigger_emergency_protocol()
     
-    # ═══════════════════════════════════════════════════════════════
+    # ═══════════════════════════════════════════════════════════════════════
     # ACTUALIZACIÓN DE MÉTRICAS
-    # ═══════════════════════════════════════════════════════════════
+    # ═══════════════════════════════════════════════════════════════════════
     
     async def _update_risk_metrics(self):
         """Actualizar métricas de riesgo actuales"""
@@ -388,7 +389,6 @@ class RiskManagerAgent(BaseAgent):
     
     async def _evaluate_risk_level(self):
         """Evaluar nivel general de riesgo"""
-        # Contar violaciones
         violations = await self._check_all_limits()
         
         critical_violations = [v for v in violations if v["severity"] in ["HARD_STOP", "CRITICAL"]]
@@ -404,21 +404,12 @@ class RiskManagerAgent(BaseAgent):
         else:
             self.current_risk_level = RiskLevel.LOW
     
-    # ═══════════════════════════════════════════════════════════════
+    # ═══════════════════════════════════════════════════════════════════════
     # EVALUACIÓN DE OPERACIONES
-    # ═══════════════════════════════════════════════════════════════
+    # ═══════════════════════════════════════════════════════════════════════
     
     async def evaluate_trade(self, trade_request: Dict[str, Any]) -> RiskAssessment:
-        """
-        ⭐ EVALUACIÓN PRINCIPAL - Esta es la función que se llama para cada trade.
-        
-        Returns RiskAssessment con:
-        - approved: Si el trade puede proceder
-        - risk_score: 0-1
-        - position_size_recommended: Tamaño ajustado
-        - warnings: Lista de advertencias
-        - reasons: Lista de razones para aprobación/rechazo
-        """
+        """⭐ EVALUACIÓN PRINCIPAL - Esta es la función que se llama para cada trade."""
         symbol = trade_request.get("symbol", "UNKNOWN")
         proposed_size = trade_request.get("size", 0)
         side = trade_request.get("side", "BUY")
@@ -541,7 +532,6 @@ class RiskManagerAgent(BaseAgent):
     
     def _get_regime_risk_factor(self) -> float:
         """Obtener factor de riesgo según régimen de mercado"""
-        # Alta volatilidad = más riesgo
         if self.current_risk_level == RiskLevel.HIGH:
             return 0.15
         elif self.current_risk_level == RiskLevel.EXTREME:
@@ -550,12 +540,8 @@ class RiskManagerAgent(BaseAgent):
     
     def _suggest_stop_loss(self, trade: Dict[str, Any]) -> float:
         """Sugerir stop loss para el trade"""
-        # Stop loss por volatilidad (ATR)
         atr = trade.get("atr", 0.02)  # 2% por defecto
-        
-        # Ajuste por drawdown actual
         dd_adjustment = 1 + (self.current_drawdown / 100)
-        
         return round(atr * 1.5 * dd_adjustment, 4)
     
     def _suggest_take_profit(self, trade: Dict[str, Any], stop_loss: float) -> float:
@@ -563,9 +549,9 @@ class RiskManagerAgent(BaseAgent):
         reward_risk_ratio = trade.get("reward_risk_ratio", 2.0)
         return round(stop_loss * reward_risk_ratio, 4)
     
-    # ═══════════════════════════════════════════════════════════════
+    # ═══════════════════════════════════════════════════════════════════════
     # PROTOCOLOS DE EMERGENCIA
-    # ═══════════════════════════════════════════════════════════════
+    # ═══════════════════════════════════════════════════════════════════════
     
     async def _trigger_hard_stop(self, limit: RiskLimit, current_value: float):
         """Trigger hard stop - detener todo"""
@@ -614,7 +600,7 @@ class RiskManagerAgent(BaseAgent):
         """Protocolo de emergencia completo"""
         self.logger.critical("🚨 PROTOCOLO DE EMERGENCIA ACTIVADO")
         
-        # 1. Notificar a todos los agentes
+        # Notificar a todos los agentes
         await self.send_message(self.create_task_message(
             to_agent="BROADCAST",
             task_type="EMERGENCY_STOP",
@@ -626,10 +612,10 @@ class RiskManagerAgent(BaseAgent):
             }
         ))
         
-        # 2. Cerrar todas las posiciones
+        # Cerrar todas las posiciones
         await self._emergency_close_all()
         
-        # 3. Desactivar nuevos trades
+        # Desactivar nuevos trades
         self.market_halt_active = True
     
     async def _emergency_close_all(self):
@@ -680,34 +666,27 @@ class RiskManagerAgent(BaseAgent):
                 }
             ))
     
-    # ═══════════════════════════════════════════════════════════════
+    # ═══════════════════════════════════════════════════════════════════════
     # PROCESAMIENTO DE MENSAJES
-    # ═══════════════════════════════════════════════════════════════
+    # ═══════════════════════════════════════════════════════════════════════
     
     async def process_message(self, message: AgentMessage) -> Optional[AgentMessage]:
         """Procesar mensajes entrantes"""
         
         if message.task_type == "EVALUATE_TRADE":
             return await self._handle_evaluate_trade(message)
-        
         elif message.task_type == "EVALUATE_STRATEGY":
             return await self._handle_evaluate_strategy(message)
-        
         elif message.task_type == "UPDATE_POSITION":
             return await self._handle_update_position(message)
-        
         elif message.task_type == "EMERGENCY_STOP":
             return await self._handle_emergency_stop(message)
-        
         elif message.task_type == "GET_RISK_STATUS":
             return self._handle_get_status(message)
-        
         elif message.task_type == "CONFIGURE_LIMITS":
             return await self._handle_configure_limits(message)
-        
         elif message.task_type == "CRITICAL_ALERT":
             return await self._handle_critical_alert(message)
-        
         elif message.task_type == "REGIME_CHANGE":
             return await self._handle_regime_change(message)
         
@@ -717,7 +696,6 @@ class RiskManagerAgent(BaseAgent):
         """Evaluar un trade"""
         assessment = await self.evaluate_trade(message.payload)
         
-        # Crear respuesta
         response = self.create_result_message(
             to_agent=message.from_agent,
             original_task=message.task_type,
@@ -735,7 +713,6 @@ class RiskManagerAgent(BaseAgent):
             }
         )
         
-        # Si fue vetado, notificar al CEO
         if not assessment.approved and assessment.risk_manager_override:
             await self.send_message(self.create_alert(
                 alert_type="TRADE_VETOED",
@@ -755,7 +732,6 @@ class RiskManagerAgent(BaseAgent):
         strategy_id = message.payload.get("strategy_id")
         risk_score = message.payload.get("risk_score", 0.5)
         
-        # Verificar si podemos activar más estrategias
         if len(self.positions) >= 10:
             return self.create_result_message(
                 to_agent=message.from_agent,
@@ -787,7 +763,6 @@ class RiskManagerAgent(BaseAgent):
             self.positions[symbol].pnl = pnl
             self.positions[symbol].pnl_percent = pnl / self.positions[symbol].size * 100
         
-        # Actualizar P&L diario
         self.daily_pnl += pnl
         
         return None
@@ -853,7 +828,6 @@ class RiskManagerAgent(BaseAgent):
         
         self.logger.warning(f"⚠️ Alerta crítica de {source}: {alert}")
         
-        # Evaluar si necesitamos tomar acción
         return self.create_result_message(
             to_agent=message.from_agent,
             original_task=message.task_type,
@@ -868,17 +842,14 @@ class RiskManagerAgent(BaseAgent):
         """Manejar cambio de régimen de mercado"""
         regime = message.payload.get("regime", "NEUTRAL")
         
-        # Ajustar límites según régimen
         if regime in ["HIGH_VOLATILITY", "CRASH"]:
             self.logger.warning(f"⚠️ Régimen de riesgo elevado: {regime}")
-            # Reducir tamaño de posiciones
-            # (Se aplicaría en futuras evaluaciones)
         
         return None
     
-    # ═══════════════════════════════════════════════════════════════
+    # ═══════════════════════════════════════════════════════════════════════
     # UTILIDADES
-    # ═══════════════════════════════════════════════════════════════
+    # ═══════════════════════════════════════════════════════════════════════
     
     def _get_limit_for_type(self, limit_type: LimitType) -> Optional[RiskLimit]:
         """Obtener límite por tipo"""
@@ -889,7 +860,6 @@ class RiskManagerAgent(BaseAgent):
     
     def _get_max_position_size(self) -> float:
         """Obtener tamaño máximo de posición actual"""
-        # Reducir si hay drawdown
         base_max = 5.0
         dd_reduction = min(0.5, self.current_drawdown / 100)
         return max(1.0, base_max - dd_reduction)
