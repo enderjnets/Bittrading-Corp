@@ -113,7 +113,7 @@ class Strategy(Base):
     created_by = Column(String(100), nullable=True)  # Agente creador
     generation_method = Column(String(100), nullable=True)  # manual, generated, evolved
     version = Column(Integer, default=1)
-    metadata = Column(JSON, nullable=True)
+    strategy_strategy_metadata = Column(JSON, nullable=True)  # Cambiado para evitar conflicto con SQLAlchemy
     created_at = Column(DateTime, default=datetime.now)
     updated_at = Column(DateTime, default=datetime.now, onupdate=datetime.now)
 

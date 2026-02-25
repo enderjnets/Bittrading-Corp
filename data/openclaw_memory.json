@@ -1,0 +1,82 @@
+{
+  "timestamp": "2026-02-24T20:43:52.519157",
+  "pending_tasks": 3,
+  "active_agents": [
+    "AgentProfile(agent_id='ceo', name='Bittrading CEO', role='Chief Executive', specialty='Strategic decision making', capabilities=['planning', 'delegation', 'monitoring', 'reporting'], model='minimax/MiniMax-M2.1', status='sent to risk_manager', current_task=None, last_active='2026-02-24T20:43:52.519091')",
+    "AgentProfile(agent_id='market_scanner', name='Bittrading Scanner', role='Market Intelligence', specialty='Opportunity detection', capabilities=['scan', 'analyze', 'rank'], model='minimax/MiniMax-M2.1', status='working on: Scan SOL market...', current_task=None, last_active='2026-02-24T20:43:52.519028')",
+    "AgentProfile(agent_id='strategy_generator', name='Bittrading Generator', role='Strategy Officer', specialty='Strategy creation', capabilities=['generate', 'evolve', 'optimize'], model='minimax/MiniMax-M2.1', status='working on: Generate RSI strategy...', current_task=None, last_active='2026-02-24T20:43:52.519069')",
+    "AgentProfile(agent_id='risk_manager', name='Bittrading Risk Manager', role='Risk Specialist', specialty='Risk assessment', capabilities=['assess_risk', 'check_limits', 'validate', 'veto'], model='minimax/MiniMax-M2.1', status='working on: Validate trade...', current_task=None, last_active='2026-02-24T20:43:52.519097')"
+  ],
+  "recent_decisions": [
+    {
+      "task_id": "75395724",
+      "task": "Scan SOL market",
+      "agent": "market_scanner",
+      "capability": "scan",
+      "priority": "P1_HIGH",
+      "status": "assigned",
+      "timestamp": "2026-02-24T20:43:52.519040"
+    },
+    {
+      "task_id": "4512957e",
+      "task": "Generate RSI strategy",
+      "agent": "strategy_generator",
+      "capability": "generate",
+      "priority": "P2_NORMAL",
+      "status": "assigned",
+      "timestamp": "2026-02-24T20:43:52.519075"
+    },
+    {
+      "task_id": "24df052d",
+      "task": "Validate trade",
+      "agent": "risk_manager",
+      "capability": "validate",
+      "priority": "P0_URGENT",
+      "status": "assigned",
+      "timestamp": "2026-02-24T20:43:52.519103"
+    }
+  ],
+  "sub_agents_active": [
+    {
+      "session_id": "sub_31d4adc4d0be",
+      "agent_id": "strategy_generator_sub_0",
+      "parent": "strategy_generator",
+      "task": "Implement RSI strategy with Numba JIT",
+      "model": "minimax/MiniMax-M2.1-lightning",
+      "status": "running",
+      "created_at": "2026-02-24T20:43:52.519142"
+    }
+  ],
+  "message_history": [
+    {
+      "message_id": "ae8cd29e",
+      "from": "ceo",
+      "to": "market_scanner",
+      "message": "Scan SOL market",
+      "priority": "P1_HIGH",
+      "context": {},
+      "timestamp": "2026-02-24T20:43:52.518997",
+      "status": "delivered"
+    },
+    {
+      "message_id": "67c82759",
+      "from": "ceo",
+      "to": "strategy_generator",
+      "message": "Generate RSI strategy",
+      "priority": "P2_NORMAL",
+      "context": {},
+      "timestamp": "2026-02-24T20:43:52.519057",
+      "status": "delivered"
+    },
+    {
+      "message_id": "1c54c354",
+      "from": "ceo",
+      "to": "risk_manager",
+      "message": "Validate trade",
+      "priority": "P0_URGENT",
+      "context": {},
+      "timestamp": "2026-02-24T20:43:52.519089",
+      "status": "delivered"
+    }
+  ]
+}
